@@ -1,34 +1,32 @@
-import { Container } from '@/components/Container'
-import { Expandable } from '@/components/Expandable'
-import { SectionHeading } from '@/components/SectionHeading'
+import { Container } from "@/components/Container";
+import { Expandable } from "@/components/Expandable";
+import { SectionHeading } from "@/components/SectionHeading";
 
 const tableOfContents = {
-  'Categories': {
-    'Technology': 1,
-    'E-commerce': 2,
-    'Healthcare': 3,
-    'Finance': 4,
-    'Gaming': 5,
-    'Education': 6,
-    'Real Estate': 7,
-    'Marketing and advertising': 8,
-  },
-  
-  
-}
+  Categories: {
+    Technology: 1,
+    "E-commerce": 2,
+    Healthcare: 3,
+    Finance: 4,
+    Gaming: 5,
+    Education: 6,
+    "Real Estate": 7,
+    "Marketing and advertising": 8
+  }
+};
 
 export function TableOfContents() {
   return (
     <section
       id="table-of-contents"
       aria-labelledby="table-of-contents-title"
-      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="1" id="table-of-contents-title">
           Table of contents
         </SectionHeading>
-        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
+        <p className="font-display mt-8 text-4xl font-bold tracking-tight text-slate-900">
           Get a look at all of the industries you can work in.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
@@ -43,12 +41,12 @@ export function TableOfContents() {
                   .slice(0, isExpanded ? undefined : 1)
                   .map(([title, pages]) => (
                     <li key={title}>
-                      <h3 className="text-xl font-bold tracking-tight font-display text-slate-900">
+                      <h3 className="font-display text-xl font-bold tracking-tight text-slate-900">
                         {title}
                       </h3>
                       <ol
                         role="list"
-                        className="px-6 py-3 mt-8 text-base tracking-tight divide-y divide-slate-300/30 rounded-2xl bg-slate-50 sm:py-7 sm:px-8"
+                        className="mt-8 divide-y divide-slate-300/30 rounded-2xl bg-slate-50 px-6 py-3 text-base tracking-tight sm:py-7 sm:px-8"
                       >
                         {Object.entries(pages).map(([title, pageNumber]) => (
                           <li
@@ -80,5 +78,5 @@ export function TableOfContents() {
         </Expandable>
       </Container>
     </section>
-  )
+  );
 }
